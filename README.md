@@ -2,6 +2,8 @@
 
 這個儲存庫保存從 [Manus 網站專案](https://manus.im/app/mpQFbB2ZDRlrzDlqgKnnY3) 於 2026-09-30 匯出的原始碼。現有網站位於 [sea-able-ai.com](https://sea-able-ai.com/)。GitHub 與 Manus 目前沒有自動同步；在其中一處修改後，需要另行更新另一處。
 
+為了讓此版本可獨立建置，已將原本由 Manus 儲存代理提供的人像放入 `client/public/images/`，並移除需要 Manus 環境變數的分析腳本佔位設定。
+
 ## 本機開發
 
 專案使用 Node.js 與 pnpm（`package.json` 指定 pnpm 10.4.1）。

@@ -15,7 +15,7 @@ const YOGA_TEACHER = "https://files.manuscdn.com/user_upload_by_module/session_f
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663568449205/P2ndxLnnhT5po55u7Rnd8x/hero-bg-TKVtSh9Uur63Q63yxGXRcG.webp";
 const DAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663568449205/UBHaBuPCsQHZpFcQ.jpg";
 const FULELE_FOREST = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663568449205/nqgxxIUhevYZrbkC.webp";
-const TIGER_PORTRAIT = "/manus-storage/tiger-portrait_5ff46d53.jpeg";
+const TIGER_PORTRAIT = "/images/tiger-portrait.jpeg";
 
 const artists = [
   {
