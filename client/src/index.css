@@ -1,0 +1,280 @@
+/*
+ * 海可愛 HaiCute Design System
+ * Design Philosophy: 台灣藍染美學 × 海洋療癒系
+ * Color: Deep Indigo → Sky Blue → Mist Blue → Linen White
+ * Typography: Noto Serif TC (headings) + Noto Sans TC (body) + Playfair Display (decorative)
+ * Layout: Asymmetric wave-inspired, generous whitespace
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* 海可愛 Custom Color Tokens */
+  --color-ocean-deep: oklch(0.22 0.07 240);
+  --color-ocean-mid: oklch(0.38 0.10 235);
+  --color-ocean-bright: oklch(0.55 0.12 230);
+  --color-ocean-light: oklch(0.72 0.08 225);
+  --color-ocean-mist: oklch(0.88 0.04 220);
+  --color-ocean-foam: oklch(0.95 0.02 215);
+  --color-linen: oklch(0.97 0.01 85);
+  --color-sand: oklch(0.93 0.02 80);
+  --color-earth: oklch(0.45 0.05 60);
+}
+
+:root {
+  --radius: 0.5rem;
+  /* Primary: Deep Indigo Blue */
+  --primary: oklch(0.30 0.09 240);
+  --primary-foreground: oklch(0.97 0.01 215);
+  /* Background: Warm Linen White */
+  --background: oklch(0.98 0.008 85);
+  --foreground: oklch(0.22 0.04 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 240);
+  --secondary: oklch(0.92 0.03 220);
+  --secondary-foreground: oklch(0.28 0.07 235);
+  --muted: oklch(0.94 0.02 215);
+  --muted-foreground: oklch(0.52 0.05 230);
+  --accent: oklch(0.88 0.05 220);
+  --accent-foreground: oklch(0.22 0.07 240);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.03 220);
+  --input: oklch(0.92 0.02 215);
+  --ring: oklch(0.55 0.12 230);
+  --chart-1: oklch(0.72 0.08 225);
+  --chart-2: oklch(0.55 0.12 230);
+  --chart-3: oklch(0.38 0.10 235);
+  --chart-4: oklch(0.30 0.09 240);
+  --chart-5: oklch(0.22 0.07 240);
+  --sidebar: oklch(0.97 0.01 215);
+  --sidebar-foreground: oklch(0.22 0.04 240);
+  --sidebar-primary: oklch(0.30 0.09 240);
+  --sidebar-primary-foreground: oklch(0.97 0.01 215);
+  --sidebar-accent: oklch(0.88 0.05 220);
+  --sidebar-accent-foreground: oklch(0.22 0.07 240);
+  --sidebar-border: oklch(0.88 0.03 220);
+  --sidebar-ring: oklch(0.55 0.12 230);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif TC', serif;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* 藍染漸層背景 */
+  .indigo-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.22 0.07 240) 0%,
+      oklch(0.30 0.09 240) 30%,
+      oklch(0.38 0.10 235) 60%,
+      oklch(0.55 0.12 230) 100%
+    );
+  }
+
+  .ocean-gradient {
+    background: linear-gradient(
+      180deg,
+      oklch(0.88 0.05 220) 0%,
+      oklch(0.95 0.02 215) 50%,
+      oklch(0.98 0.008 85) 100%
+    );
+  }
+
+  /* 毛玻璃效果 */
+  .glass-nav {
+    background: oklch(0.98 0.008 85 / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid oklch(0.88 0.03 220 / 0.5);
+  }
+
+  /* 波浪分隔線 */
+  .wave-divider {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 文字裝飾 */
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-serif-tc {
+    font-family: 'Noto Serif TC', serif;
+  }
+
+  /* 動畫 */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 卡片懸停效果 */
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px oklch(0.22 0.07 240 / 0.15);
+  }
+
+  /* 水波紋按鈕 */
+  .btn-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-ripple::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, oklch(1 0 0 / 0.3) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.4s ease;
+  }
+
+  .btn-ripple:hover::after {
+    transform: scale(2);
+  }
+
+  /* 藍染紋理 */
+  .indigo-texture {
+    background-image:
+      radial-gradient(ellipse at 20% 50%, oklch(0.38 0.10 235 / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, oklch(0.30 0.09 240 / 0.2) 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 80%, oklch(0.22 0.07 240 / 0.25) 0%, transparent 45%);
+  }
+
+  /* 圖片裁切 */
+  .img-organic {
+    border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+  }
+
+  /* 滾動動畫 */
+  @keyframes float-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes wave-sway {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-20px); }
+  }
+
+  .animate-float-up {
+    animation: float-up 0.8s ease-out forwards;
+  }
+
+  .animate-wave {
+    animation: wave-sway 8s ease-in-out infinite;
+  }
+}
